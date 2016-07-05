@@ -19,6 +19,22 @@ export class MainController {
     }
 
     constructor($log, jackpot) {
+        // some rules for tiers
+        const _TIER_NUMBERS = [
+            [5, 2],
+            [5, 1],
+            [5, 0],
+            [4, 2],
+            [4, 1],
+            [4, 0],
+            [3, 2],
+            [2, 2],
+            [3, 1],
+            [3, 0],
+            [1, 2],
+            [2, 1]
+        ];
+
         // creation model
         let model = jackpot.data;
 
@@ -31,8 +47,9 @@ export class MainController {
         model.last.odds = Object.keys(model.last.odds).map(k => {
             let item = model.last.odds[k];
             item.tier = parseInt(k.substr(4));
-            item.romanTier =  this._arabic2roman(item.tier);
-            item.prize =  item.prize / 100;
+            item.romanTier = this._arabic2roman(item.tier);
+            item.prize = item.prize / 100;
+            item.numbers = item.tier ? _TIER_NUMBERS[item.tier - 1] : null;
             return item;
         }).sort((a, b) => a.tier - b.tier).slice(1);
 

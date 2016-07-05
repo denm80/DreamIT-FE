@@ -130,7 +130,7 @@
                         <tbody>
                         <tr ng-repeat="item in main.model.last.odds">
                             <td class="col-md-1">Tier {{item.romanTier}}</td>
-                            <td class="col-md-6">5 Numbers, 2 Euronumbers</td>
+                            <td class="col-md-6">{{item.numbers[0]}} Numbers, {{item.numbers[1]}} Euronumbers</td>
                             <td class="col-md-2 text-right">{{item.winners | number}}x</td>
                             <td class="col-md-2 text-right">{{item.prize | currency:"€"}}</td>
                         </tr>
