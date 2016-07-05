@@ -10,14 +10,8 @@ Please use ES6 and transpile to ES5 with a task runner like Gulp, Grunt, or just
 Use GIT as version control system and commit preferably in small steps.
 
 
-## download the project
-```
-git clone https://github.com/denm80/ticker-grid.git
-```
-
-## install node
-
-**nodejs v5.11.0 or higher is required**
+## System Requirements
++nodejs v5.11.0+
 
 ## install and start
 ```
