@@ -10,10 +10,10 @@ Please use ES6 and transpile to ES5 with a task runner like Gulp, Grunt, or just
 Use GIT as version control system and commit preferably in small steps.
 
 
-## System Requirements
-+nodejs v5.11.0+
+## Requirements
++ nodejs v5.11.0+
 
-## install and start
+## Install and start
 ```
 npm start
 ```
