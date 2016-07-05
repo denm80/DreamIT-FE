@@ -7,7 +7,7 @@ var babel = require("gulp-babel");
 var concat = require("gulp-concat");
 var browserify = require("gulp-browserify");
 var plumber = require('gulp-plumber');
-
+var proxyMiddleware = require('http-proxy-middleware');
 
 var path = {
     src: {
@@ -58,7 +58,8 @@ gulp.task('serve', ['build', 'watch'], function () {
             baseDir: path.output.basedir,
             routes: {
                 '/lib': path.lib
-            }
+            },
+            middleware: proxyMiddleware('/api', {target: 'https://media.lottoland.com/', changeOrigin: true})
         }
     });
 });
@@ -77,7 +78,7 @@ function handleError(err) {
 // ------------------------------------------------------------------------------
 gulp.task('html', function () {
     gulp.src(path.src.html)
-        .pipe(plumber({ errorHandler: handleError }))
+        .pipe(plumber({errorHandler: handleError}))
         .pipe(gulp.dest(path.output.basedir))
         .pipe(browserSync.stream());
 });
@@ -87,7 +88,7 @@ gulp.task('html', function () {
 // ------------------------------------------------------------------------------
 gulp.task('images', function () {
     gulp.src(path.src.images)
-        .pipe(plumber({ errorHandler: handleError }))
+        .pipe(plumber({errorHandler: handleError}))
         .pipe(gulp.dest(path.output.images))
         .pipe(browserSync.stream());
 });
@@ -98,7 +99,7 @@ gulp.task('images', function () {
 // ------------------------------------------------------------------------------
 gulp.task('scripts', function () {
     return gulp.src(path.src.scripts)
-        .pipe(plumber({ errorHandler: handleError }))
+        .pipe(plumber({errorHandler: handleError}))
         .pipe(sourcemaps.init())
         .pipe(babel())
         .pipe(browserify({
@@ -116,7 +117,7 @@ gulp.task('scripts', function () {
 // ------------------------------------------------------------------------------
 gulp.task('styles', function () {
     return gulp.src(path.src.styles)
-        .pipe(plumber({ errorHandler: handleError }))
+        .pipe(plumber({errorHandler: handleError}))
         .pipe(sourcemaps.init())
         .pipe(sass())
         .pipe(concat('app.css'))
