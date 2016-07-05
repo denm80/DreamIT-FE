@@ -1,15 +1,14 @@
 @import "varialbes.scss";
 
-@mixin menu-background {
-  background-image: linear-gradient(to right, $grid-light-color, $grid-dark-color);
-  background-color: $grid-dark-color;
-}
-
 @mixin logo-background($url) {
   background: url($url) center top no-repeat;
   background-size: contain;
 }
 
+@mixin menu-background {
+  background-image: linear-gradient(to right, $grid-light-color, $grid-dark-color);
+  background-color: $grid-dark-color;
+}
 
 
 header {
@@ -71,77 +70,17 @@ footer {
   }
 }
 
+
 body {
   margin-top: 125px;
   color: $primary-text-color;
 }
 
 
-.main {
-  min-height: 622px;
-  background: url("img/bg.jpg") center top no-repeat;
 
-  @media (max-width: 1400px) {
-    & {
-      background: none;
-    }
-  }
-  background-size: 100% auto;
-
-  .sub-menu {
-    div button {
-      min-width: 100px;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-  }
-
-  .page {
-    background-color: $primary-background-color;
-
-    .page-header .form-control {
-      margin-top: 15px;
-    }
-  }
-
-  .borderbottom {
-    td {
-      border-top: none;
-      border-bottom: 1px solid $primary-border-color;
-    }
-  }
-}
-
-.balls-results {
-  ul {
-    list-style: none;
-    padding: 0;
-  }
-
-  li {
-    display: inline-block;
-    border-radius: 30px;
-    width: 30px;
-    height: 30px;
-    line-height: 26px;
-    border: 2px solid $primary-border-color;
-    text-align: center;
-    font-size: 16px;
-    margin-right: 6px;
-    margin-bottom: 6px;
-    position: relative;
-    color: $secondary-text-color;
-  }
-  li.extra {
-    border-color: $brown-color;
-  }
-}
-
-
-
+//overrides
 .breadcrumb {
   background: none;
-  //min-width: 480px;
 }
 
 .btn-success {
