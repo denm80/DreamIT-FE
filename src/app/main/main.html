@@ -77,22 +77,24 @@
                             <div class="bannerOfferTitle">Didn't win?</div>
                             <div class="bannerOfferTime">Next draw closing in</div>
                             <div class="bannerOfferCountdown">
-                            <span>
-                                <span class="counterNumber">03</span>
-                                Days
-                            </span>
-                            <span>
-                                <span class="counterNumber">18</span>
-                                Hours
-                            </span>
-                            <span>
-                                <span class="counterNumber">13</span>
-                                Mins.
-                            </span>
-                            <span>
-                                <span class="counterNumber">55</span>
-                                Secs.
-                            </span>
+                                <timer end-time="main.model.next.date">
+                                    <span>
+                                        <span class="counterNumber">{{days}}</span>
+                                        Days
+                                    </span>
+                                    <span>
+                                        <span class="counterNumber">{{hours}}</span>
+                                        Hours
+                                    </span>
+                                    <span>
+                                        <span class="counterNumber">{{minutes}}</span>
+                                        Mins.
+                                    </span>
+                                    <span>
+                                        <span class="counterNumber">{{seconds}}</span>
+                                        Secs.
+                                    </span>
+                                </timer>
                             </div>
                         </div>
                         <div class="col-md-12 col-xs-6 bannerOffer">
@@ -122,7 +124,8 @@
                     <div class="balls-results">
                         <ul>
                             <li ng-repeat="item in main.model.last.numbers"
-                                ng-class="{true:'extra'}[item.isEuro]">{{item.number}}</li>
+                                ng-class="{true:'extra'}[item.isEuro]">{{item.number}}
+                            </li>
                         </ul>
                     </div>
 

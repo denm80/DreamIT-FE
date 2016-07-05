@@ -53,14 +53,6 @@ export class MainController {
             return item;
         }).sort((a, b) => a.tier - b.tier).slice(1);
 
-
-        console.log(model.last);
-
-        // this.model = model;
-        // = new new Date(jackpot.last.year, jackpot.last.month, jackpot.last.day);
-        // jackpot.next.date = new new Date(jackpot.next.year, jackpot.next.month, jackpot.next.day);
-        // $log.info(jackpot);
-
         this.model = model;
 
     }
