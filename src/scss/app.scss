@@ -1,0 +1,173 @@
+@import "varialbes.scss";
+
+@mixin menu-background {
+  background-image: linear-gradient(to right, $grid-light-color, $grid-dark-color);
+  background-color: $grid-dark-color;
+}
+
+@mixin logo-background($url) {
+  background: url($url) center top no-repeat;
+  background-size: contain;
+}
+
+
+
+header {
+  .logo-section {
+    background-color: $primary-background-color;
+    .logo {
+      @include logo-background("img/logo.svg");
+
+      display: inline-block;
+      margin: 15px 0 15px 0;
+      width: 125px;
+      height: 39px;
+    }
+  }
+
+  .menu {
+    @include menu-background;
+  }
+
+  @media (max-width: 768px) {
+    .logo-section {
+      @include menu-background;
+
+      .logo {
+        @include logo-background("img/logo-inv.svg");
+      }
+    }
+  }
+}
+
+
+footer {
+  background-color: $secondary-background-color;
+
+  .container {
+    padding: 10px;
+    color: $secondary-text-color;
+  }
+
+  p {
+    display: inline-block;
+    width: 25%;
+    text-align: center;
+    float: left;
+
+    span {
+      display: block;
+      margin: 5px;
+    }
+
+    span.glyphicon {
+      font-size: 28px;
+      padding: 18px;
+      border-radius: 40px;
+      color: $grid-dark-color;
+      background-color: $primary-background-color;
+      border: 4px solid $primary-border-color;
+    }
+  }
+}
+
+body {
+  margin-top: 125px;
+  color: $primary-text-color;
+}
+
+
+.main {
+  min-height: 622px;
+  background: url("img/bg.jpg") center top no-repeat;
+
+  @media (max-width: 1400px) {
+    & {
+      background: none;
+    }
+  }
+  background-size: 100% auto;
+
+  .sub-menu {
+    div button {
+      min-width: 100px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  .page {
+    background-color: $primary-background-color;
+
+    .page-header .form-control {
+      margin-top: 15px;
+    }
+  }
+
+  .borderbottom {
+    td {
+      border-top: none;
+      border-bottom: 1px solid $primary-border-color;
+    }
+  }
+}
+
+.balls-results {
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  li {
+    display: inline-block;
+    border-radius: 30px;
+    width: 30px;
+    height: 30px;
+    line-height: 26px;
+    border: 2px solid $primary-border-color;
+    text-align: center;
+    font-size: 16px;
+    margin-right: 6px;
+    margin-bottom: 6px;
+    position: relative;
+    color: $secondary-text-color;
+  }
+  li.extra {
+    border-color: $brown-color;
+  }
+}
+
+
+
+.breadcrumb {
+  background: none;
+  //min-width: 480px;
+}
+
+.btn-success {
+  background-color: $grid-dark-color;
+  border-color: $grid-dark-color;
+}
+
+.btn-default.active, .btn-default:active, .open > .dropdown-toggle.btn-default {
+  color: $primary-text-color;
+  background-color: $active-background-color;
+  border-color: $primary-border-color;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: $inverse-text-color;
+  font-weight: bold;
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
+  color: $secondary-text-color;
+  background-color: $active-background-color;
+}
+
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+  background-color: $active-background-color;
+}
+.navbar-default .navbar-toggle{
+  background-color: $secondary-background-color;
+}

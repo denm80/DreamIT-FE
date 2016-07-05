@@ -1,0 +1,88 @@
+@import "varialbes.scss";
+
+.banner {
+  display: inline-block;
+  margin: 5px;
+  padding: 10px 10px 10px;
+  color: $inverse-text-color;
+  border-radius: 4px;
+  background-color: $purple-color;
+
+  div {
+    text-align: center;
+  }
+
+  .bannerPicture {
+    display: inline-block;
+    width: 120px;
+    height: 120px;
+    background: url("https://media.lottoland.com/cms/54d3be43e4b0bfa5891381d7/24h_icon-noluck_2x-1.png") center top no-repeat;
+    background-size: contain;
+  }
+
+  .bannerOfferTitle {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .bannerOfferTime {
+    font-size: 10px;
+    font-style: italic;
+  }
+
+  .bannerOfferCountdown {
+    padding: 0px 6px;
+    width: 160px;
+    height: 50px;
+    margin: 0px auto 24px;
+    border-radius: 4px;
+    background: $primary-background-color;
+
+    span {
+      color: rgb(157, 25, 107);
+      float: left;
+      display: inline-block;
+      width: 25%;
+      font-size: 12px;
+      text-align: center;
+    }
+
+    .counterNumber {
+      display: block;
+      width: 100%;
+      height: 30px;
+      font-size: 24px;
+      line-height: 30px;
+    }
+  }
+
+  .bannerOffer {
+
+    .bannerOfferList {
+      display: block;
+      margin: 12px auto;
+      text-align: left;
+      padding-left: 0px;
+
+      @media (max-width: 768px) {
+        & {
+          margin-top: 60px;
+        }
+      }
+
+      li {
+        color: $inverse-text-color;;
+        list-style: none;
+        margin: 0;
+        padding: 0 0 0 22px;
+        background: url("img/check.png") left 5px / 16px no-repeat;
+      }
+    }
+
+    button {
+      display: block;
+      margin: 20px auto;
+    }
+  }
+}
+
