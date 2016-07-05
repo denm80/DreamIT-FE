@@ -77,7 +77,7 @@
                             <div class="bannerOfferTitle">Didn't win?</div>
                             <div class="bannerOfferTime">Next draw closing in</div>
                             <div class="bannerOfferCountdown">
-                                <timer end-time="main.model.next.date">
+                                <timer end-time="model.next.date">
                                     <span>
                                         <span class="counterNumber">{{days}}</span>
                                         Days
@@ -118,12 +118,12 @@
                 </div>
                 <div class="col-md-9 col-xs-12 col-md-pull-3">
                     <div class="page-header">
-                        <h4>EuroJackpot Results For {{main.model.last.date | date:'EEEE, d MMMM y'}}</h4>
+                        <h4>EuroJackpot Results For {{model.last.date | date:'EEEE, d MMMM y'}}</h4>
                     </div>
 
                     <div class="balls-results">
                         <ul>
-                            <li ng-repeat="item in main.model.last.numbers"
+                            <li ng-repeat="item in model.last.numbers"
                                 ng-class="{true:'extra'}[item.isEuro]">{{item.number}}
                             </li>
                         </ul>
@@ -131,7 +131,7 @@
 
                     <table class="table borderbottom">
                         <tbody>
-                        <tr ng-repeat="item in main.model.last.odds">
+                        <tr ng-repeat="item in model.last.odds">
                             <td class="col-md-1">Tier {{item.romanTier}}</td>
                             <td class="col-md-6">{{item.numbers[0]}} Numbers, {{item.numbers[1]}} Euronumbers</td>
                             <td class="col-md-2 text-right">{{item.winners | number}}x</td>

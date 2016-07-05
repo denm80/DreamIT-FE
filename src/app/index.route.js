@@ -1,9 +1,8 @@
 export function routerConfig ($routeProvider) {
   $routeProvider
-    .when('/', {
-      templateUrl: 'app/main/main.html',
-      controller: 'MainController',
-      controllerAs: 'main',
+    .when('/euro-jackpot', {
+      templateUrl: 'app/euro-jackpot/euro-jackpot.html',
+      controller: 'EuroJackpotController',
       resolve: {
         jackpot: function($http) {
           return $http.get('/api/drawings/euroJackpot');
@@ -11,6 +10,6 @@ export function routerConfig ($routeProvider) {
       }
     })
     .otherwise({
-      redirectTo: '/'
+      redirectTo: '/euro-jackpot'
     });
 }

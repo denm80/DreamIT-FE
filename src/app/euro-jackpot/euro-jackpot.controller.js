@@ -1,4 +1,4 @@
-export class MainController {
+export class EuroJackpotController {
 
     _arabic2roman(n) {
         let v = "";
@@ -18,23 +18,12 @@ export class MainController {
         return v;
     }
 
-    constructor($log, jackpot) {
+    constructor($scope, jackpot) {
         // some rules for tiers
-        const _TIER_NUMBERS = [
-            [5, 2],
-            [5, 1],
-            [5, 0],
-            [4, 2],
-            [4, 1],
-            [4, 0],
-            [3, 2],
-            [2, 2],
-            [3, 1],
-            [3, 0],
-            [1, 2],
-            [2, 1]
+        const TIER_NUMBERS = [
+            [5, 2], [5, 1], [5, 0], [4, 2], [4, 1], [4, 0], [3, 2], [2, 2], [3, 1], [3, 0], [1, 2], [2, 1]
         ];
-
+        ;
         // creation model
         let model = jackpot.data;
 
@@ -49,13 +38,10 @@ export class MainController {
             item.tier = parseInt(k.substr(4));
             item.romanTier = this._arabic2roman(item.tier);
             item.prize = item.prize / 100;
-            item.numbers = item.tier ? _TIER_NUMBERS[item.tier - 1] : null;
+            item.numbers = item.tier ? TIER_NUMBERS[item.tier - 1] : null;
             return item;
         }).sort((a, b) => a.tier - b.tier).slice(1);
 
-        this.model = model;
-
+        $scope.model = model;
     }
-
-
 }
